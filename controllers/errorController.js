@@ -6,7 +6,15 @@ const handleCastErrorDB = (err) => {
 };
 
 const handleDuplicateFieldsDB = (err) => {
-  const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+  // Safe extraction of duplicate field value
+  let value = 'unknown';
+  if (err.errmsg) {
+    // Use a simpler, non-vulnerable regex or just extract the field name
+    const match = err.errmsg.match(/dup key: \{ ([^:]+):/);
+    if (match) {
+      value = match[1];
+    }
+  }
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
 };
