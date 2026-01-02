@@ -1,0 +1,407 @@
+/* Basic CSS for the application */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  background-color: #f7f7f7;
+}
+
+.header {
+  background-color: #444;
+  padding: 0 5rem;
+  height: 8rem;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__el {
+  text-decoration: none;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-left: 4rem;
+  transition: all 0.3s;
+}
+
+.nav__el:hover {
+  color: #55c57a;
+}
+
+.nav__el--cta {
+  padding: 1rem 3rem;
+  border-radius: 10rem;
+  background-color: #55c57a;
+  color: #fff;
+}
+
+.main {
+  background-color: #f7f7f7;
+  padding: 8rem 0;
+  min-height: calc(100vh - 8rem - 8rem);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 7rem;
+  padding: 0 5rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.15);
+}
+
+.card__header {
+  position: relative;
+}
+
+.card__picture {
+  position: relative;
+  height: 22rem;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+.card__picture-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heading-tertirary {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.card__details {
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.75rem;
+  column-gap: 2rem;
+}
+
+.card__sub-heading {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  grid-column: 1 / -1;
+}
+
+.card__text {
+  grid-column: 1 / -1;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: -1rem;
+  margin-bottom: 0.75rem;
+}
+
+.card__data {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.card__icon {
+  height: 2rem;
+  width: 2rem;
+  fill: #55c57a;
+  margin-right: 1rem;
+}
+
+.card__footer {
+  background-color: #f7f7f7;
+  padding: 2.5rem 3rem;
+  border-top: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__footer-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card__footer-text {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+}
+
+.btn--green:hover {
+  background-color: #7ed56f;
+}
+
+.btn--small {
+  padding: 1.25rem 3rem;
+  font-size: 1.4rem;
+}
+
+.footer {
+  background-color: #333;
+  padding: 6rem 4rem 3rem;
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 6rem;
+  align-items: center;
+}
+
+.footer__logo {
+  height: 3rem;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__nav a {
+  color: #f7f7f7;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.footer__nav a:hover {
+  color: #55c57a;
+}
+
+.footer__copyright {
+  grid-column: 1 / -1;
+  font-size: 1.4rem;
+  color: #999;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.login-form {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 4rem 5rem;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+}
+
+.form__group {
+  margin-bottom: 2.5rem;
+}
+
+.form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.form__input {
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: #55c57a;
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+}
+
+.ma-bt-lg {
+  margin-bottom: 3.5rem;
+}
+
+.ma-bt-md {
+  margin-bottom: 2.5rem;
+}
+
+.form__signup {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.form__signup a {
+  color: #55c57a;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.no-tours {
+  text-align: center;
+  padding: 5rem;
+  font-size: 2rem;
+}
+
+.error {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem 5rem;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.error__title {
+  margin-bottom: 3rem;
+}
+
+.error__emoji {
+  font-size: 6rem;
+  margin: 2rem 0;
+}
+
+.error__msg {
+  font-size: 1.8rem;
+  color: #777;
+}
+
+.user-view {
+  max-width: 120rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.06);
+  display: flex;
+}
+
+.user-view__menu {
+  flex: 0 0 30rem;
+  background-color: #f7f7f7;
+  padding: 4rem 0;
+}
+
+.side-nav {
+  list-style: none;
+}
+
+.side-nav li {
+  border-left: 0 solid #55c57a;
+  transition: all 0.3s;
+}
+
+.side-nav--active,
+.side-nav li:hover {
+  border-left: 4px solid #55c57a;
+}
+
+.side-nav a {
+  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #777;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.side-nav svg {
+  height: 2rem;
+  width: 2rem;
+  fill: currentColor;
+  margin-right: 2rem;
+}
+
+.user-view__content {
+  flex: 1;
+  padding: 7rem 0;
+}
+
+.user-view__form-container {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 8rem;
+}
+
+.line {
+  margin: 6rem 0;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.form-user-data,
+.form-user-password {
+  margin-top: 2.5rem;
+}
+
+.right {
+  text-align: right;
+}
