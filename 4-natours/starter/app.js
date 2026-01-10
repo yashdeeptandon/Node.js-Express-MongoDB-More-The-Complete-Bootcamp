@@ -9,16 +9,16 @@ const tours = JSON.parse(
 
 app.use(express.json()); // this is behaving as the middleware. Middleware is necessary for the post request. If no middleware then no connection
 
-app.get('/api/v1/tours', (req, res) => {
+const getAllTours = (req, res) => {
   res.status(200).json({
     statusCode: 200,
     count: tours.length,
     status: 'success',
     data: { tours },
   });
-});
+};
 
-app.get('/api/v1/tours/:id', (req, res) => {
+const getTour = (req, res) => {
   const id = req.params.id;
   const tour = tours.filter((item) => item.id === Number(id));
   res.status(200).json({
@@ -26,9 +26,9 @@ app.get('/api/v1/tours/:id', (req, res) => {
     status: 'success',
     data: { tour },
   });
-});
+};
 
-app.post('/api/v1/tours', (req, res) => {
+const saveTour = (req, res) => {
   const newId = tours[tours.length - 1]?.id + 1;
   const newTour = {
     id: newId,
@@ -48,9 +48,9 @@ app.post('/api/v1/tours', (req, res) => {
       });
     }
   );
-});
+};
 
-app.patch('api/v1/tours/:id', (req, res) => {
+const updateTour = (req, res) => {
   const id = req.params.id;
   const newTours = tours.map((item) => {
     if (item.id === Number(id)) {
@@ -70,7 +70,18 @@ app.patch('api/v1/tours/:id', (req, res) => {
       tours: newTours,
     },
   });
-});
+};
+
+const deleteTour = (req, res) => {
+  res.status(204).json({
+    status: 'success',
+    statusCode: 204,
+    data: null,
+  });
+};
+
+app.route('/api/v1/tours').get(getAllTours).post(saveTour);
+app.route('/api/v1/tours/:id').get(getTour).patch(updateTour).delete(deleteTour);
 
 const port = 3000;
 app.listen(port, () => {
